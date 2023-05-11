@@ -79,9 +79,5 @@ git clone https://github.com/jvcleave/ofxImGui.git ./openframeworks/addons/ofxIm
 
 5.5 Portail
 
-## Document de design
-
-- Pour le TP1, l’évaluation est par rapport à l’information présentée sur les 5 premières catégories de critères fonctionnels et sur les autres sections du document.
-
 ## Vidéo
-- à faire
+- https://www.youtube.com/watch?v=oS7_ac3aqCw&feature=youtu.be
