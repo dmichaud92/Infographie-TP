@@ -63,6 +63,40 @@ git clone https://github.com/jvcleave/ofxImGui.git ./openframeworks/addons/ofxIm
 
 5.4 Occlusion
 
+### Textures
+
+6.1 Coordonnées de texture
+
+6.3 Mappage tonal
+
+6.5 Texture Procédurale
+
+### Illumination classique
+
+7.2 Matériaux
+
+7.3 Types de lumières
+
+7.4 Lumières multiples
+
+### Topologie
+
+8.1 Courbe paramétrique
+
+8.5 Effet de relief
+
+### Lancer de rayon
+
+9.1 Intersection
+
+### Illumination moderne
+
+10.1 HDR
+
+10.3 Métallicité
+
+10.4 Microfacettes
+
 ### Autres
 
 2.4 Formes vectorielles
@@ -78,6 +112,14 @@ git clone https://github.com/jvcleave/ofxImGui.git ./openframeworks/addons/ofxIm
 5.2 Mode de projection
 
 5.5 Portail
+
++
+
+Effet de lumière pulser avec aura de couleurs inverse sur les spheres
+
+Effet simulant le réalisme d'une flame pour les torches
+
+Effets des torches pris en comptes dans le shader des cubes
 
 ## Vidéo
 - https://www.youtube.com/watch?v=oS7_ac3aqCw&feature=youtu.be
