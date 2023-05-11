@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(WindowsTargetPlatformVersion)'==''">
+    <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(WindowsTargetPlatformVersion)' == ''">10.0</WindowsTargetPlatformVersion>
+    <TargetPlatformVersion>$(WindowsTargetPlatformVersion)</TargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Dungeon-Creator</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="../openFrameworks/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="../openFrameworks/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="../openFrameworks/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="../openFrameworks/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\openFrameworks\addons\ofxAssimpModelLoader\libs;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port\AndroidJNI;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\license;..\openFrameworks\addons\ofxAssimpModelLoader\src;..\openFrameworks\addons\ofxImGui\libs;..\openFrameworks\addons\ofxImGui\libs\imgui;..\openFrameworks\addons\ofxImGui\libs\imgui\src;..\openFrameworks\addons\ofxImGui\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <LanguageStandard>Default</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies);assimp32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent>
+      <Command>for /d %%f in ($(OF_ROOT)\libs\*) do (if exist %%f\lib\vs\$(Platform_Actual)\*.dll ( robocopy "%%f\lib\vs\$(Platform_Actual)" "$(ProjectDir)bin" "*.dll" /njs /njh /np /fp /bytes ));
+copy "$(ProjectDir)..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64\assimp64.dll" "$(OutDirFullPath)assimp64.dll" /Y;
+copy "$(ProjectDir)..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32\assimp32.dll" "$(OutDirFullPath)assimp32.dll" /Y;</Command>
+      <Message>Copying DLLs</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\openFrameworks\addons\ofxAssimpModelLoader\libs;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port\AndroidJNI;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\license;..\openFrameworks\addons\ofxAssimpModelLoader\src;..\openFrameworks\addons\ofxImGui\libs;..\openFrameworks\addons\ofxImGui\libs\imgui;..\openFrameworks\addons\ofxImGui\libs\imgui\src;..\openFrameworks\addons\ofxImGui\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <LanguageStandard>Default</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies);assimp64.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent>
+      <Command>for /d %%f in ($(OF_ROOT)\libs\*) do (if exist %%f\lib\vs\$(Platform_Actual)\*.dll ( robocopy "%%f\lib\vs\$(Platform_Actual)" "$(ProjectDir)bin" "*.dll" /njs /njh /np /fp /bytes ));
+copy "$(ProjectDir)..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64\assimp64.dll" "$(OutDirFullPath)assimp64.dll" /Y;
+copy "$(ProjectDir)..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32\assimp32.dll" "$(OutDirFullPath)assimp32.dll" /Y;</Command>
+      <Message>Copying DLLs</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\openFrameworks\addons\ofxAssimpModelLoader\libs;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port\AndroidJNI;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\license;..\openFrameworks\addons\ofxAssimpModelLoader\src;..\openFrameworks\addons\ofxImGui\libs;..\openFrameworks\addons\ofxImGui\libs\imgui;..\openFrameworks\addons\ofxImGui\libs\imgui\src;..\openFrameworks\addons\ofxImGui\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <LanguageStandard>Default</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies);assimp32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent>
+      <Command>for /d %%f in ($(OF_ROOT)\libs\*) do (if exist %%f\lib\vs\$(Platform_Actual)\*.dll ( robocopy "%%f\lib\vs\$(Platform_Actual)" "$(ProjectDir)bin" "*.dll" /njs /njh /np /fp /bytes ));
+copy "$(ProjectDir)..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64\assimp64.dll" "$(OutDirFullPath)assimp64.dll" /Y;
+copy "$(ProjectDir)..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32\assimp32.dll" "$(OutDirFullPath)assimp32.dll" /Y;</Command>
+      <Message>Copying DLLs</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\openFrameworks\addons\ofxAssimpModelLoader\libs;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port\AndroidJNI;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64;..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\license;..\openFrameworks\addons\ofxAssimpModelLoader\src;..\openFrameworks\addons\ofxImGui\libs;..\openFrameworks\addons\ofxImGui\libs\imgui;..\openFrameworks\addons\ofxImGui\libs\imgui\src;..\openFrameworks\addons\ofxImGui\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <LanguageStandard>Default</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies);assimp64.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent>
+      <Command>for /d %%f in ($(OF_ROOT)\libs\*) do (if exist %%f\lib\vs\$(Platform_Actual)\*.dll ( robocopy "%%f\lib\vs\$(Platform_Actual)" "$(ProjectDir)bin" "*.dll" /njs /njh /np /fp /bytes ));
+copy "$(ProjectDir)..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\x64\assimp64.dll" "$(OutDirFullPath)assimp64.dll" /Y;
+copy "$(ProjectDir)..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\lib\vs\Win32\assimp32.dll" "$(OutDirFullPath)assimp32.dll" /Y;</Command>
+      <Message>Copying DLLs</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Courbe.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Renderer.cpp" />
+    <ClCompile Include="src\IObject.cpp" />
+    <ClCompile Include="src\Ray.cpp" />
+    <ClCompile Include="src\Models.cpp" />
+    <ClCompile Include="src\Armadillo.cpp" />
+    <ClCompile Include="src\Chest.cpp" />
+    <ClCompile Include="src\Generator.cpp" />
+    <ClCompile Include="src\Lights.cpp" />
+    <ClCompile Include="src\DcMaterial.cpp" />
+    <ClCompile Include="src\Cursor.cpp" />
+    <ClCompile Include="src\Cameras.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\Grid.cpp" />
+    <ClCompile Include="src\Cube.cpp" />
+    <ClCompile Include="src\Sphere.cpp" />
+    <ClCompile Include="src\Torch.cpp" />
+    <ClCompile Include="src\UserInterface.cpp" />
+    <ClCompile Include="src\SceneData.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpAnimation.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpMeshHelper.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpModelLoader.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpTexture.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\src\BaseEngine.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\src\DefaultTheme.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\src\EngineGLFW.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\src\EngineOpenGLES.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\src\EngineVk.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\src\Gui.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\src\ImHelpers.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\src\ofxImGuiLoggerChannel.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imgui.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imgui_demo.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imgui_draw.cpp" />
+    <ClCompile Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imgui_widgets.cpp" />
+    <ClCompile Include="src\Viewports.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Courbe.h" />
+    <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\Renderer.h" />
+    <ClInclude Include="src\Ray.h" />
+    <ClInclude Include="src\Models.h" />
+    <ClInclude Include="src\Armadillo.h" />
+    <ClInclude Include="src\Chest.h" />
+    <ClInclude Include="src\Generator.h" />
+    <ClInclude Include="src\IObject.h" />
+    <ClInclude Include="src\Lights.h" />
+    <ClInclude Include="src\DcMaterial.h" />
+    <ClInclude Include="src\Cursor.h" />
+    <ClInclude Include="src\Cameras.h" />
+    <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\Grid.h" />
+    <ClInclude Include="src\Cube.h" />
+    <ClInclude Include="src\Sphere.h" />
+    <ClInclude Include="src\Torch.h" />
+    <ClInclude Include="src\UserInterface.h" />
+    <ClInclude Include="src\SceneData.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpAnimation.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpMeshHelper.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpModelLoader.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpTexture.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\src\ofxAssimpUtils.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\ai_assert.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\anim.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\camera.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\cexport.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\cfileio.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\cimport.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\color4.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler\poppack1.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler\pstdint.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Compiler\pushpack1.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\config.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\DefaultIOStream.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\DefaultIOSystem.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\DefaultLogger.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Defines.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\defs.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Exporter.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Importer.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\importerdesc.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\IOStream.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\IOSystem.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\light.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\Logger.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\LogStream.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\material.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\matrix3x3.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\matrix4x4.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\mesh.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\metadata.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\NullLogger.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\port\AndroidJNI\AndroidJNIIOSystem.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\postprocess.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\ProgressHandler.hpp" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\quaternion.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\scene.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\SceneCombiner.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\texture.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\types.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\vector2.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\vector3.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxAssimpModelLoader\libs\assimp\include\assimp\version.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\BaseEngine.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\BaseTheme.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\DefaultTheme.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\EngineGLFW.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\EngineOpenGLES.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\EngineVk.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\Gui.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\imconfig.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\ImHelpers.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\ofxImGui.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\src\ofxImGuiLoggerChannel.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imgui.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imgui_internal.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imstb_rectpack.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imstb_textedit.h" />
+    <ClInclude Include="..\openFrameworks\addons\ofxImGui\libs\imgui\src\imstb_truetype.h" />
+    <ClInclude Include="src\Viewports.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="icon.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,90 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.com
+*.class
+*.o
+*.so
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.exp
+*.pdb
+*.out
+*.app
+
+
+# Mac Finder index files
+.DS_*
+
+# Mac apps
+*.app*
+
+# Visual studio project files
+*.vcxproj.user
+*.suo
+*.sdf
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Paths
+.svn/
+obj/
+build/
+ipch/
+.vs/
+x64/
+bin/*
+!bin/data/
+!bin/data/**/*.*

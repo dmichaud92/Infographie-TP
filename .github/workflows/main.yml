@@ -1,0 +1,17 @@
+name: clang-format Style Check
+
+on: [pull_request]
+
+jobs:
+  formatting-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        
+    - name: clang-format lint
+      uses: DoozyX/clang-format-lint-action@v0.15
+      with:
+        clangFormatVersion: 15
