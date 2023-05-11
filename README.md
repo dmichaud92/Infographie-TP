@@ -12,7 +12,7 @@
 
 ```
 # Clone this repository
-git clone https://github.com/patrix87/Dungeon-Creator.git
+git clone https://github.com/dmichaud92/Infographie-TP.git
 # Clone OpenFrameworks 0.11.2
 git clone https://github.com/openframeworks/openFrameworks.git --branch 0.11.2
 # Clone OfxImGui
