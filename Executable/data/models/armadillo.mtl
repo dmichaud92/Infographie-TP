@@ -1,0 +1,13 @@
+# Blender 3.4.1 MTL File: 'None'
+# www.blender.org
+
+newmtl brown_brick_02
+Ka 1.000000 1.000000 1.000000
+Ks 0.280382 0.280382 0.280382
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 2 2 2 textures/aerial_asphalt_01_diff_1k.jpg
+map_Ns -s 2 2 2 textures/aerial_asphalt_01_rough_1k.jpg
+map_Bump -s 2 2 2 -bm 1.000000 textures/aerial_asphalt_01_nor_gl_1k.jpg
